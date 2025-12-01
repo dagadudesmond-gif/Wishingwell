@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WishWell - Christmas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: black;   /* Dark background for snow */
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      color: #fff;
+    }
+    h1 {
+      color: #f1c40f;
+      margin-top: 40px;
+      text-shadow: 2px 2px 8px red;
+    }
+    p {
+      font-size: 1.2em;
+      color: #ddd;
+    }
+    .wish {
+      margin: 20px auto;
+      padding: 15px;
+      border: 2px solid #f1c40f;
+      background: rgba(0,0,0,0.7);
+      border-radius: 10px;
+      width: 60%;
+      font-size: 1.2em;
+      color: #f1c40f;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+    }
+    button {
+      background: #f1c40f;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffd700;
+      color: black;
+    }
+    a {
+      text-decoration: none;
+      color: #f1c40f;
+    }
+    a:hover {
+      color: #fff;
+    }
+
+    /* ❄️ Snowfall animation */
+    @keyframes snow {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(800px); opacity: 0; }
+    }
+    .snowflake {
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: url("snowflake.png") no-repeat center;
+      background-size: contain;
+      animation: snow 10s linear infinite;
+    }
+
+    /* 🎅 Santa styling */
+    .santa {
+      margin-top: 40px;
+    }
+    .hohoho {
+      font-size: 2em;
+      color: red;
+      text-shadow: 2px 2px 5px white;
+      animation: whisper 2s infinite alternate;
+    }
+    @keyframes whisper {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎄 Merry Christmas!</h1>
+  <p>Enter a name to personalize your wish:</p>
+  <input type="text" id="nameInput" placeholder="Type a name here">
+  <button onclick="showWish()">Generate Wish</button>
+  <div id="personalizedWish" class="wish"></div>
+
+  <!-- 🎅 Santa image -->
+  <div class="santa">
+    <img src="santa.png" alt="Father Christmas" width="250">
+    <div class="hohoho">HO HO HO 🎅</div>
+  </div>
+
+  <p><a href="index.html">⬅ Back to Homepage</a></p>
+
+  <script>
+    function showWish() {
+      const name = document.getElementById("nameInput").value;
+      document.getElementById("personalizedWish").innerText =
+        `❄️ Merry Christmas, ${name}! 🎁 May your holidays be filled with joy, love, and laughter 🎄✨`;
+    }
+
+    // Generate snowflakes
+    for (let i = 0; i < 40; i++) {
+      let snowflake = document.createElement("div");
+      snowflake.className = "snowflake";
+      snowflake.style.left = Math.random() * window.innerWidth + "px";
+      snowflake.style.animationDuration = (5 + Math.random()*5) + "s";
+      document.body.appendChild(snowflake);
+    }
+  </script>
+</body>
+</html>

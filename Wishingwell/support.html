@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WishWell - Support</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: black;   /* Black heart theme */
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+    h1 {
+      color: #f1c40f;
+      margin-top: 40px;
+      text-shadow: 2px 2px 8px #ff69b4;
+    }
+    p {
+      font-size: 1.2em;
+      color: #ddd;
+    }
+    .wish {
+      margin: 20px auto;
+      padding: 15px;
+      border: 2px solid #f1c40f;
+      background: rgba(0,0,0,0.7);
+      border-radius: 10px;
+      width: 60%;
+      font-size: 1.2em;
+      color: #f1c40f;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+    }
+    button {
+      background: #f1c40f;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffd700;
+      color: black;
+    }
+    a {
+      text-decoration: none;
+      color: #f1c40f;
+    }
+    a:hover {
+      color: #fff;
+    }
+
+    /* 💪 Strength emoji animation */
+    .strength {
+      font-size: 3em;
+      margin-top: 30px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.7; }
+    }
+
+    /* 🖤 Black heart glowing effect */
+    .blackheart {
+      font-size: 3em;
+      color: black;
+      background: #fff;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 0 20px #f1c40f;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌈 Support & Strength</h1>
+  <p>Enter a name to send strength and encouragement:</p>
+  <input type="text" id="nameInput" placeholder="Type a name here">
+  <button onclick="showWish()">Generate Support Message</button>
+  <div id="personalizedWish" class="wish"></div>
+
+  <!-- 💪 Strength emoji + 🖤 Black heart -->
+  <div class="strength">💪</div>
+  <div class="blackheart">🖤</div>
+
+  <p><a href="index.html">⬅ Back to Homepage</a></p>
+
+  <script>
+    function showWish() {
+      const name = document.getElementById("nameInput").value;
+      document.getElementById("personalizedWish").innerText =
+        `💪🖤 Stay strong, ${name}! 🌈 You are resilient, loved, and never alone.`;
+    }
+  </script>
+</body>
+</html>

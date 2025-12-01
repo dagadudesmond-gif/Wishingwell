@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WishWell - Birthday</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: black url("champagne.jpg") no-repeat center center fixed;
+      background-size: cover;   /* Makes the champagne image fill the screen */
+      margin: 0;
+      padding: 0;
+      color: #f1c40f;           /* Gold text for celebration */
+    }
+    h1 {
+      color: #f1c40f;
+      margin-top: 40px;
+      text-shadow: 2px 2px 8px #fff;
+    }
+    p {
+      font-size: 1.2em;
+      color: #fff;
+    }
+    .wish {
+      margin: 20px auto;
+      padding: 15px;
+      border: 2px solid #f1c40f;
+      background: rgba(0,0,0,0.7); /* Transparent dark box */
+      border-radius: 10px;
+      width: 60%;
+      font-size: 1.2em;
+      color: #f1c40f;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+    }
+    button {
+      background: #f1c40f;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffd700;
+      color: black;
+    }
+    a {
+      text-decoration: none;
+      color: #f1c40f;
+    }
+    a:hover {
+      color: #fff;
+    }
+
+    /* 🎉 Celebration confetti animation */
+    @keyframes confetti {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(600px); opacity: 0; }
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: gold;
+      animation: confetti 3s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday!</h1>
+  <p>Enter a name to personalize your wish:</p>
+  <input type="text" id="nameInput" placeholder="Type a name here">
+  <button onclick="showWish()">Generate Wish</button>
+  <div id="personalizedWish" class="wish"></div>
+  <p><a href="index.html">⬅ Back to Homepage</a></p>
+
+  <script>
+    function showWish() {
+      const name = document.getElementById("nameInput").value;
+      document.getElementById("personalizedWish").innerText =
+        `🍾🎉 Happy Birthday, ${name}! 🥳 May your day sparkle like champagne and overflow with joy 🎂🎈`;
+    }
+
+    // 🎊 Generate confetti elements
+    for (let i = 0; i < 30; i++) {
+      let confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * window.innerWidth + "px";
+      confetti.style.background = ["gold", "pink", "lightblue"][Math.floor(Math.random()*3)];
+      confetti.style.animationDuration = (2 + Math.random()*3) + "s";
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>

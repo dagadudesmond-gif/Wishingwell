@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WishWell - Condolences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #111;   /* Soft dark background */
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+    h1 {
+      color: #f1c40f;
+      margin-top: 40px;
+      text-shadow: 2px 2px 8px #888;
+    }
+    p {
+      font-size: 1.2em;
+      color: #ddd;
+    }
+    .wish {
+      margin: 20px auto;
+      padding: 15px;
+      border: 2px solid #f1c40f;
+      background: rgba(0,0,0,0.6);
+      border-radius: 10px;
+      width: 60%;
+      font-size: 1.2em;
+      color: #f1c40f;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+    }
+    button {
+      background: #f1c40f;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffd700;
+      color: black;
+    }
+    a {
+      text-decoration: none;
+      color: #f1c40f;
+    }
+    a:hover {
+      color: #fff;
+    }
+
+    /* 🌸 Flowers image styling */
+    .flowers {
+      margin-top: 30px;
+    }
+    .flowers img {
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>💐 With Deepest Sympathy</h1>
+  <p>Enter a name to send condolences:</p>
+  <input type="text" id="nameInput" placeholder="Type a name here">
+  <button onclick="showWish()">Generate Condolence Message</button>
+  <div id="personalizedWish" class="wish"></div>
+
+  <!-- 💐 Bunch of flowers image -->
+  <div class="flowers">
+    <img src="flowers.png" alt="Bunch of Flowers">
+  </div>
+
+  <p><a href="index.html">⬅ Back to Homepage</a></p>
+
+  <script>
+    function showWish() {
+      const name = document.getElementById("nameInput").value;
+      document.getElementById("personalizedWish").innerText =
+        `💐 Our heartfelt condolences, ${name}. May these flowers bring comfort and peace in this difficult time.`;
+    }
+  </script>
+</body>
+</html>
